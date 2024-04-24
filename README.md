@@ -8,9 +8,13 @@ This project explores time series data related to various economic indicators so
 Data Sources-
 The data used in this project is sourced from the following FRED series:
 https://fred.stlouisfed.org/series/CORESTICKM159SFRBATL
+
 https://fred.stlouisfed.org/series/FLEXCPIM679SFRBATL
+
 https://fred.stlouisfed.org/series/DSPIC96
+
 https://fred.stlouisfed.org/series/FEDFUNDS
+
 https://fred.stlouisfed.org/series/CIVPART
 
 
