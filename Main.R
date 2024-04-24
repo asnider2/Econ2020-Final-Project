@@ -148,24 +148,9 @@ graph_short_2008 <- ggplot(all_data_df_scaled, aes(x = date)) +
   annotate("text", x = as.Date("2010-01-01"), y = -Inf, label = "End Date", vjust = -0.5)
 
 
-graph_short_2001 <- ggplot(all_data_df_scaled, aes(x = date)) +
-  geom_rect(aes(xmin = as.Date("2001-03-01"), xmax = as.Date("2001-11-01"), ymin = -Inf, ymax = Inf), fill = "grey", alpha = 0.2) +  # Shaded region for recession period
-  geom_line(aes(y = sticky_cpi_value, color = "Sticky CPI")) +
-  geom_line(aes(y = scaled_real_dpi_value, color = "Real DPI (Scaled)")) +
-  geom_line(aes(y = fed_funds_rate_value, color = "Fed Funds Rate")) +
-  labs(title = "Time Series Data",
-       x = "Date",
-       y = "Value") +
-  scale_color_manual(values = c("Sticky CPI" = "red", "Real DPI (Scaled)" = "green", "Fed Funds Rate" = "blue")) +
-  theme_minimal()+
-  xlim(as.Date("2000-01-01"), as.Date("2002-04-29")) + #no other reason other than it's my birthdate
-  annotate("text", x = as.Date("2000-01-01"), y = -Inf, label = "Start Date", vjust = -0.5) +
-  annotate("text", x = as.Date("2002-04-29"), y = -Inf, label = "End Date", vjust = -0.5)
 
 ggsave("alldata_graph.pdf", plot = alldata_graph, device = "pdf", width = 11, height = 8.5, units = "in")
 ggsave("noflex_graph.pdf", plot = noflex_graph, device = "pdf", width = 11, height = 8.5, units = "in")
 ggsave("alldata_graph_short.pdf", plot = alldata_graph_short, device = "pdf", width = 11, height = 8.5, units = "in")
 ggsave("graph_short_2020.pdf", plot = graph_short_2020, device = "pdf", width = 11, height = 8.5, units = "in")
 ggsave("graph_short_2008.pdf", plot = graph_short_2008, device = "pdf", width = 11, height = 8.5, units = "in")
-ggsave("graph_short_2001.pdf", plot = graph_short_2001, device = "pdf", width = 11, height = 8.5, units = "in")
-
