@@ -12,7 +12,7 @@ library(zoo)
 
 #importing api key
 api_key <- readLines("/Users/angelasnider/Desktop/Econ2020/Econ2020-Final-Project/apikey.txt") # nolint
-#Replication:replace this with your api key
+
 fredr_set_key(api_key)
 
 
@@ -161,4 +161,11 @@ graph_short_2001 <- ggplot(all_data_df_scaled, aes(x = date)) +
   xlim(as.Date("2000-01-01"), as.Date("2002-04-29")) + #no other reason other than it's my birthdate
   annotate("text", x = as.Date("2000-01-01"), y = -Inf, label = "Start Date", vjust = -0.5) +
   annotate("text", x = as.Date("2002-04-29"), y = -Inf, label = "End Date", vjust = -0.5)
+
+ggsave("alldata_graph.pdf", plot = alldata_graph, device = "pdf", width = 11, height = 8.5, units = "in")
+ggsave("noflex_graph.pdf", plot = noflex_graph, device = "pdf", width = 11, height = 8.5, units = "in")
+ggsave("alldata_graph_short.pdf", plot = alldata_graph_short, device = "pdf", width = 11, height = 8.5, units = "in")
+ggsave("graph_short_2020.pdf", plot = graph_short_2020, device = "pdf", width = 11, height = 8.5, units = "in")
+ggsave("graph_short_2008.pdf", plot = graph_short_2008, device = "pdf", width = 11, height = 8.5, units = "in")
+ggsave("graph_short_2001.pdf", plot = graph_short_2001, device = "pdf", width = 11, height = 8.5, units = "in")
 
